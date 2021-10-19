@@ -25,31 +25,31 @@
             steps {
                 echo 'mvn install'
             }
-            post {
-                success{
-                    bat 'echo "Packaging done"'
-                }
-                failure{
-                    bat 'echo "Packaging failure"'
-                }
-            }
+//             post {
+//                 success{
+//                     bat 'echo "Packaging done"'
+//                 }
+//                 failure{
+//                     bat 'echo "Packaging failure"'
+//                 }
+//             }
         }
 
-        stage("Deploy to AWS"){
-            steps{
-                 withAWS(credentials:'puneetawscred', region:'us-east-1') {
-                     s3Upload(workingDir:'target', includePathPattern:'**/*.jar', bucket:'my-jenkinsangular1', path:'')
-            }
-            }
-            post {
-                success{
-                    bat 'echo "Uploaded to AWS"'
-                }
-                failure{
-                    bat 'echo "failure"'
-                }
-            }
-        
-        }
+//         stage("Deploy to AWS"){
+//             steps{
+//                  withAWS(credentials:'puneetawscred', region:'us-east-1') {
+//                      s3Upload(workingDir:'target', includePathPattern:'**/*.jar', bucket:'my-jenkinsangular1', path:'')
+//             }
+//             }
+//             post {
+//                 success{
+//                     bat 'echo "Uploaded to AWS"'
+//                 }
+//                 failure{
+//                     bat 'echo "failure"'
+//                 }
+//             }
+//         
+//         }
     }
 }
