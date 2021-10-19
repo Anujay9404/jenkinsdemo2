@@ -35,12 +35,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-clean-plugin</artifactId>
-  <version>3.1.0</version>
-  <type>maven-plugin</type>
-</dependency>
+	
 		
 
 	</dependencies>
@@ -86,7 +81,11 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-report-plugin</artifactId>
-				<version>3.0.0-M4</version>
+				<configuration>
+				<forkCount>3</forkCount>
+				<reuseForks>true</reuseForks>
+				<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>
