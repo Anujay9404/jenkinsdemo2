@@ -8,12 +8,7 @@
 	<name>mavendemo</name>
 	<description>mavendemo</description>
 
-	<artifactId>maven-clean-plugin</artifactId>
-<version>2.5</version>
-<packaging>maven-plugin</packaging>
-<name>Maven Clean Plugin</name>
-<description> The Maven Clean Plugin is a plugin that removes files generated at build-time in a project's directory. </description>
-<inceptionYear>2001</inceptionYear>
+	
 	<dependencies>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
