@@ -10,7 +10,7 @@
                 bat 'mvn -B -DskipTests clean'
             }
         }
-        stage('Test') {
+     stage('Test') {
             steps {
                 echo 'Testing..'
                 bat 'mvn test'
@@ -21,35 +21,11 @@
                 }
             }
         }
-        stage('Package') {
+     stage('Package') {
             steps {
                 echo 'mvn install'
-            }
-//             post {
-//                 success{
-//                     bat 'echo "Packaging done"'
-//                 }
-//                 failure{
-//                     bat 'echo "Packaging failure"'
-//                 }
-//             }
-        }
+            }      
 
-//         stage("Deploy to AWS"){
-//             steps{
-//                  withAWS(credentials:'puneetawscred', region:'us-east-1') {
-//                      s3Upload(workingDir:'target', includePathPattern:'**/*.jar', bucket:'my-jenkinsangular1', path:'')
-//             }
-//             }
-//             post {
-//                 success{
-//                     bat 'echo "Uploaded to AWS"'
-//                 }
-//                 failure{
-//                     bat 'echo "failure"'
-//                 }
-//             }
-//         
-//         }
+     }
     }
-}
+ }
